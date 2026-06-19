@@ -20,7 +20,7 @@ export const Route = createFileRoute("/_shell/signs/registry")({
 const STATUS_COLOR: Record<string, string> = {
   Installed: "border-success/30 bg-success/5 text-success",
   Verified: "border-gold/30 bg-gold/5 text-gold",
-  Manufactured: "border-info/30 bg-info/5 text-info",
+  "Ready for Installation": "border-info/30 bg-info/5 text-info",
   Damaged: "border-destructive/30 bg-destructive/5 text-destructive",
   Maintenance: "border-warning/30 bg-warning/5 text-warning",
   Planned: "border-border bg-muted text-muted-foreground",

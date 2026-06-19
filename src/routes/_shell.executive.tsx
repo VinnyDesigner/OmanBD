@@ -46,7 +46,7 @@ function Executive() {
     <div className="space-y-8">
       <PageHeader
         title="Executive NAS Dashboard"
-        description="Board-level overview of the National Addressing program."
+        description="Board-level overview of the National Addressing System."
         actions={<Button variant="outline" className="gap-1.5"><Download className="h-4 w-4" /> Export PDF</Button>}
       />
 
@@ -191,7 +191,7 @@ function Executive() {
           </ul>
         </div>
         <div className="rounded-2xl border border-border bg-card p-5 shadow-elev-1">
-          <h3 className="font-semibold">AI Insights</h3>
+          <h3 className="font-semibold">Executive Insights</h3>
           <p className="text-xs text-muted-foreground">Generated from latest snapshot</p>
           <ul className="mt-4 space-y-2">
             {AI_INSIGHTS.map((a, i) => {

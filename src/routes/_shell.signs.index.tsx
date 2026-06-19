@@ -25,6 +25,9 @@ const SIGN_TYPES = [
 ];
 
 function SignsDashboard() {
+  const signStatusData = SIGN_STATUS.map(s => 
+    s.name === "Ready for Installation" ? { ...s, name: "Produced" } : s
+  );
   return (
     <div className="space-y-8">
       <PageHeader
@@ -85,15 +88,15 @@ function SignsDashboard() {
           <div className="h-[220px]">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
-                <Pie data={SIGN_STATUS} dataKey="value" nameKey="name" innerRadius={50} outerRadius={84} paddingAngle={2}>
-                  {SIGN_STATUS.map((e) => <Cell key={e.name} fill={e.color} />)}
+                <Pie data={signStatusData} dataKey="value" nameKey="name" innerRadius={50} outerRadius={84} paddingAngle={2}>
+                  {signStatusData.map((e) => <Cell key={e.name} fill={e.color} />)}
                 </Pie>
                 <Tooltip contentStyle={{ borderRadius: 12, border: "1px solid oklch(0.92 0.005 260)", fontSize: 12 }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
           <div className="grid grid-cols-2 gap-1.5 text-[11px]">
-            {SIGN_STATUS.map((s) => (
+            {signStatusData.map((s) => (
               <div key={s.name} className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ background: s.color }} />{s.name}</div>
             ))}
           </div>
@@ -150,7 +153,7 @@ function SignsDashboard() {
         <div className="xl:col-span-2 rounded-2xl border border-border bg-card p-5 shadow-elev-1">
           <div className="mb-3 flex items-center justify-between">
             <div>
-              <h3 className="font-semibold">Governorate-wise Sign Distribution</h3>
+              <h3 className="font-semibold">Sign Distribution by Governorate</h3>
               <p className="text-xs text-muted-foreground">ArcGIS layer · coverage intensity by governorate</p>
             </div>
             <Button asChild variant="outline" size="sm"><Link to="/map">Open full map</Link></Button>

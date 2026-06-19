@@ -17,7 +17,7 @@ export const Route = createFileRoute("/_shell/quality")({
 const ERRORS = [
   { type: "Duplicate address", count: 412, sev: "High" },
   { type: "Missing coordinates", count: 1284, sev: "Critical" },
-  { type: "Invalid governorate ref", count: 318, sev: "Medium" },
+  { type: "Invalid governorate reference", count: 318, sev: "Medium" },
   { type: "Spatial mismatch", count: 96, sev: "High" },
   { type: "Unverified sign linkage", count: 184, sev: "Medium" },
   { type: "Stale address record", count: 612, sev: "Low" },
@@ -28,7 +28,7 @@ function Quality() {
     <div className="space-y-6">
       <PageHeader
         title="Data Quality"
-        description="Engine-driven detection of duplicates, missing records, invalid references and spatial errors."
+        description="Detection of duplicates, missing records, invalid references and spatial errors."
         actions={<Button variant="outline" className="gap-1.5"><Download className="h-4 w-4" /> Export Report</Button>}
       />
 

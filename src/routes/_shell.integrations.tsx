@@ -28,7 +28,7 @@ function Integrations() {
     <div className="space-y-6">
       <PageHeader
         title="Integration Monitoring"
-        description="Real-time monitoring center across all connected systems."
+        description="Real-time monitoring of connected systems and services."
         actions={
           <>
             <Button variant="outline" className="gap-1.5"><RefreshCw className="h-4 w-4" /> Refresh</Button>

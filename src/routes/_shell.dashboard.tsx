@@ -4,7 +4,7 @@ import {
   BarChart3, Globe2, Search, Code2, Activity, FileBarChart, ShieldCheck,
   Sparkles, ChevronRight, CircleDot,
 } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from "recharts";
 import { PageHeader } from "@/components/page-header";
 import { KpiCard } from "@/components/kpi-card";
 import { OmanMap } from "@/components/oman-map";
@@ -51,10 +51,10 @@ function Dashboard() {
               <CircleDot className="h-3 w-3" /> Q2-2026 Program · On Track
             </div>
             <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight md:text-3xl">
-              National coverage hit <span className="text-gradient-brand">81.4%</span>
+              National Coverage: <span className="text-gradient-brand">81.4%</span>
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Address growth +12% MoM. Two governorates at risk — review the executive snapshot.
+              Address growth increased by 12% compared to the previous month. Two governorates require attention.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               <Button asChild className="gradient-brand text-primary-foreground"><Link to="/executive">Executive Dashboard</Link></Button>
@@ -112,10 +112,10 @@ function Dashboard() {
         <div className="xl:col-span-2 rounded-2xl border border-border bg-card p-5 shadow-elev-1">
           <div className="mb-4 flex items-center justify-between">
             <div>
-              <h3 className="font-semibold">Power BI Snapshot</h3>
-              <p className="text-xs text-muted-foreground">Planned vs Installed vs Verified — last 12 months</p>
+              <h3 className="font-semibold">National Address Analytics</h3>
+              <p className="text-xs text-muted-foreground">Address registrations and verification trends across governorates</p>
             </div>
-            <Badge variant="outline" className="border-info/30 bg-info/5 text-info">Live · Power BI</Badge>
+            <Badge variant="outline" className="border-info/30 bg-info/5 text-info">Live Analytics</Badge>
           </div>
           <div className="h-[280px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -124,9 +124,10 @@ function Dashboard() {
                 <XAxis dataKey="m" tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip contentStyle={{ borderRadius: 12, border: "1px solid oklch(0.92 0.005 260)", fontSize: 12 }} />
-                <Bar dataKey="manufactured" fill="oklch(0.62 0.18 250)" radius={[4,4,0,0]} />
-                <Bar dataKey="installed" fill="oklch(0.48 0.18 22)" radius={[4,4,0,0]} />
-                <Bar dataKey="verified" fill="oklch(0.78 0.12 85)" radius={[4,4,0,0]} />
+                <Legend wrapperStyle={{ fontSize: 11 }} />
+                <Bar dataKey="manufactured" name="Registered Addresses" fill="oklch(0.62 0.18 250)" radius={[4,4,0,0]} />
+                <Bar dataKey="installed" name="Verified Addresses" fill="oklch(0.48 0.18 22)" radius={[4,4,0,0]} />
+                <Bar dataKey="verified" name="Active Addresses" fill="oklch(0.78 0.12 85)" radius={[4,4,0,0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

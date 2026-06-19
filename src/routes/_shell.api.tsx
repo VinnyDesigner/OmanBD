@@ -22,7 +22,7 @@ function APIPortal() {
     <div className="space-y-6">
       <PageHeader
         title="API Developer Portal"
-        description="OAuth 2.0 · JWT · Swagger UI · enterprise key management."
+        description="API documentation, authentication and access management."
         actions={
           <>
             <Button variant="outline" className="gap-1.5"><BookOpen className="h-4 w-4" /> Docs</Button>

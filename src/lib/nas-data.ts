@@ -24,9 +24,9 @@ export const KPI_TOP = [
 export const MODULES = [
   { id: "signs", title: "Sign Management", desc: "Lifecycle, registry, QR and field ops", to: "/signs", icon: "Signpost", color: "from-[#B21F2D] to-[#7A1220]" },
   { id: "portal", title: "National Address Portal", desc: "Public address lookup & registration", to: "/portal", icon: "Globe2", color: "from-[#3B82F6] to-[#1E40AF]" },
-  { id: "search", title: "Address Search", desc: "Federated address resolution", to: "/portal", icon: "Search", color: "from-[#D4AF37] to-[#9A7B16]" },
+  { id: "search", title: "Address Search", desc: "Address search and validation", to: "/portal", icon: "Search", color: "from-[#D4AF37] to-[#9A7B16]" },
   { id: "bi", title: "BI Dashboard", desc: "Executive analytics & KPIs", to: "/executive", icon: "BarChart3", color: "from-[#22C55E] to-[#15803D]" },
-  { id: "api", title: "API Developer Portal", desc: "OAuth, JWT, Swagger UI", to: "/api", icon: "Code2", color: "from-[#7A1220] to-[#B21F2D]" },
+  { id: "api", title: "API Developer Portal", desc: "API documentation and developer services", to: "/api", icon: "Code2", color: "from-[#7A1220] to-[#B21F2D]" },
   { id: "integ", title: "Integration Monitoring", desc: "Real-time SLA & error logs", to: "/integrations", icon: "Activity", color: "from-[#F59E0B] to-[#B45309]" },
   { id: "reports", title: "Reports", desc: "Operational & board-level", to: "/quality", icon: "FileBarChart", color: "from-[#3B82F6] to-[#1E3A8A]" },
   { id: "admin", title: "Administration", desc: "RBAC, jurisdictions, audit", to: "/api", icon: "ShieldCheck", color: "from-[#1F2937] to-[#374151]" },
@@ -61,7 +61,7 @@ export const APPROVALS = [
 
 export const SIGN_STATUS = [
   { name: "Planned", value: 4820, color: "#6B7280" },
-  { name: "Manufactured", value: 8210, color: "#3B82F6" },
+  { name: "Ready for Installation", value: 8210, color: "#3B82F6" },
   { name: "Installed", value: 78410, color: "#22C55E" },
   { name: "Verified", value: 71240, color: "#D4AF37" },
   { name: "Damaged", value: 2180, color: "#EF4444" },
@@ -77,7 +77,7 @@ export const INSTALL_TREND = Array.from({ length: 12 }, (_, i) => ({
 
 export const SIGNS = Array.from({ length: 42 }, (_, i) => {
   const gov = GOVERNORATES[i % GOVERNORATES.length];
-  const status = ["Installed", "Verified", "Manufactured", "Damaged", "Maintenance", "Planned"][i % 6];
+  const status = ["Installed", "Verified", "Ready for Installation", "Damaged", "Maintenance", "Planned"][i % 6];
   const condition = ["Excellent", "Good", "Fair", "Poor"][i % 4];
   return {
     id: `SGN-${(77200 + i).toString().padStart(6, "0")}`,
@@ -105,7 +105,7 @@ export const TASKS = {
     { id: "T-9808", title: "Coordinate Correction — Sohar district", assignee: "GIS Team", priority: "medium", due: "Thu" },
   ],
   "In Progress": [
-    { id: "T-9788", title: "Sign Deployment Batch BTH-2280 — Muttrah", assignee: "ENG-12", priority: "high", due: "Today" },
+    { id: "T-9788", title: "Sign Installation Batch BTH-2280 — Muttrah", assignee: "ENG-12", priority: "high", due: "Today" },
     { id: "T-9787", title: "Resolve Duplicate Addresses — Nizwa", assignee: "Quality Eng.", priority: "medium", due: "Thu" },
     { id: "T-9786", title: "Replace damaged signs — Sohar", assignee: "BAU-09", priority: "high", due: "Today" },
     { id: "T-9785", title: "Fix Missing Coordinates (1,284 records)", assignee: "Quality Eng.", priority: "high", due: "Fri" },

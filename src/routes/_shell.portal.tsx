@@ -24,7 +24,7 @@ function Portal() {
     <div className="space-y-6">
       <PageHeader
         title="National Address Portal"
-        description="Federated address lookup across the Sultanate of Oman."
+        description="Address lookup across the Sultanate of Oman."
         actions={<Button variant="outline" className="gap-1.5"><Download className="h-4 w-4" /> Export Results</Button>}
       />
 
@@ -33,7 +33,7 @@ function Portal() {
         <div className="grid-bg absolute inset-0 opacity-40" />
         <div className="relative mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card/80 px-3 py-1 text-xs font-medium text-primary backdrop-blur">
-            <Globe2 className="h-3 w-3" /> Federated Address Search
+            <Globe2 className="h-3 w-3" /> Address Search
           </div>
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">
             Find any <span className="text-gradient-brand">address in Oman</span>

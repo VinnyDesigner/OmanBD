@@ -13,7 +13,7 @@ export const Route = createFileRoute("/_shell/signs/$id")({
   component: Lifecycle,
 });
 
-const STAGES = ["Planned", "Approved", "Manufactured", "Ready", "Installed", "Verified", "Active", "Maintenance", "Replaced", "Retired"];
+const STAGES = ["Planned", "Approved", "Ready for Installation", "Ready", "Installed", "Verified", "Active", "Maintenance", "Replaced", "Retired"];
 const CURRENT = 6; // index of Active
 
 function Lifecycle() {

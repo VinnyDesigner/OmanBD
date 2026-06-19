@@ -25,7 +25,7 @@ function Prog() {
     <div className="space-y-6">
       <PageHeader
         title="Signage Progress"
-        description="Manufacturing throughput vs installation, contractor scorecards and maintenance backlog."
+        description="Installation progress, contractor performance and maintenance backlog."
         actions={<Button variant="outline" className="gap-1.5"><Download className="h-4 w-4" /> Export</Button>}
       />
 
